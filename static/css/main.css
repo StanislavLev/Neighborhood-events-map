@@ -1,0 +1,102 @@
+
+* {
+  font-family: 'Alegreya', serif;
+  font-size: 18px;
+  color: black;
+  word-wrap: normal;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 5px;
+}
+
+label, li:hover {
+    cursor: pointer;
+}
+
+hr {
+    border-top: 3px solid #7d97ad;
+}
+
+.height100 {
+    height: 100vh;
+}
+.font-black {
+    color: black;
+}
+
+.display-block {
+    display: block;
+}
+
+.display-inline {
+    display: inline;
+}
+
+.container-fluid {
+  max-width: 1200px;
+}
+
+.padding-zero {
+  padding: 0;
+}
+
+.margin-zero {
+  margin: 0;
+}
+
+.margin-top5 {
+  margin-top: 5px;
+}
+
+
+.width100 {
+  width: 100%;
+}
+
+.width30 {
+  width: 30%;
+}
+
+.max-height400px {
+  max-height: 400px;
+}
+
+.height200{
+  height: 200px;
+}
+
+.DarkRed-text {
+    color: DarkRed ;
+}
+
+.btn {
+  width: 150px;
+  font-size: 18px;
+}
+
+.btn-wide {
+  margin-top: 5px;
+  width: 200px;
+}
+
+.valign_top{
+    align-items: flex-start;
+}
+
+.font-size-22{
+    font-size: 22px;
+}
+
+#map { 
+    height: 100%;
+    width: 100%
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="static/js/knockout-3.4.2.js"></script>   
+    <script src="static/js/bootstrap.min.js" defer></script>
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="static/css/main.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Alegreya:400,700,900" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row height100">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <h2 class = "text-center">How to use?!</h2>
+                <h3>1. Drag     <img src="http://chart.googleapis.com/chart?chst=d_map_pin_icon_withshadow&chld=camping|ADDE63" alt="camp marker"> marker </h3>
+                <h3>2. Click  <button disabled>Get random events!</button></h3>
+                <h3>3. Explore events and have fun!</h3>
+                <form id = "formm">
+                    <br>
+                    <div  class="row margin-top5">
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                            <!--data-bind = "click: loadData()" triggers loadData on load page, when "click: loadData" (without parenthesis) doesn't-->
+                            <button  type="button" class="font-size-22" data-bind = "click: loadData()" id="submit-btn">Get random events!</button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div  class="row margin-top5">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <h2 class = "text-center"> Search results: </h2>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <ul class="padding-zero" id="search-results" data-bind = "foreach: eventList">
+                                <li data-bind = "visible: title.length > 0, text: title, click: function(){$parent.showInfoWindow(id)}, event: { mouseover: function(){$parent.yellowMarker(id)}, mouseout: function(){$parent.blueMarker(id)} }"></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <h3 class="DarkRed-text" data-bind = "visible: getEventsError().length > 0, text: getEventsError()"></h3>
+                        </div>
+                    </div>
+                    <hr>
+                    <div  class="row margin-top5">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <input type="checkbox" data-bind = "visible: eventList().length > 0, checked: showAll, event: {change: function(){hideShowAllFunc(showAll)}}">
+                            <h2 class = "text-center display-inline">Filter by category: </h2>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12" data-bind = "foreach: categoryList">
+                            <label>
+                                <input type="checkbox" data-bind = "checked: showMarkers, event: {change: function(){$parent.updateVisibleMarkers()}}">
+                                <span data-bind = "text: category"></span><br>
+                            </label>    
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-8 col-sm-12 col-xs-12 height100">
+                    <div id="map"></div>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/myfunc.js"></script>   
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUvoYRrQtpvc42QvzjFbjqIEIsGxz5BEU&callback=initMap" onerror="errorMap()"></script>
+</body>
+</html>
+
+
