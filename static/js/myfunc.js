@@ -16,7 +16,7 @@ function initMap() {
         position: startCoordinates,
         title: "Start search location.",
         animation: google.maps.Animation.DROP,
-        icon: "http://chart.googleapis.com/chart?chst=d_map_pin_icon_withshadow&chld=camping|ADDE63",
+        icon: "https://chart.googleapis.com/chart?chst=d_map_pin_icon_withshadow&chld=camping|ADDE63",
         id: 0,
         draggable: true,
         info: new google.maps.InfoWindow()
@@ -35,7 +35,7 @@ function initMap() {
             position: {lat: 0, lng: 0},
             title: "",
             animation: google.maps.Animation.DROP,
-            icon: "http://chart.googleapis.com/chart?chst=d_map_pin_letter_withshadow&chld=" + i + "|0000FF|000000",
+            icon: "https://chart.googleapis.com/chart?chst=d_map_pin_letter_withshadow&chld=" + i + "|0000FF|000000",
             id: i,
             info: new google.maps.InfoWindow(),
             category: []
@@ -50,12 +50,12 @@ function initMap() {
         var highlitedMarker;
         var defaultMarker;
         if (marker === startMarker){
-            highlitedMarker = "http://chart.googleapis.com/chart?chst=d_map_pin_icon_withshadow&chld=camping|FFFF00";
-            defaultMarker = "http://chart.googleapis.com/chart?chst=d_map_pin_icon_withshadow&chld=camping|ADDE63";
+            highlitedMarker = "https://chart.googleapis.com/chart?chst=d_map_pin_icon_withshadow&chld=camping|FFFF00";
+            defaultMarker = "https://chart.googleapis.com/chart?chst=d_map_pin_icon_withshadow&chld=camping|ADDE63";
         }
         else {
-            highlitedMarker = "http://chart.googleapis.com/chart?chst=d_map_pin_letter_withshadow&chld=" + marker.id + "|FFFF00|000000";
-            defaultMarker = "http://chart.googleapis.com/chart?chst=d_map_pin_letter_withshadow&chld=" + marker.id + "|0000FF|000000";
+            highlitedMarker = "https://chart.googleapis.com/chart?chst=d_map_pin_letter_withshadow&chld=" + marker.id + "|FFFF00|000000";
+            defaultMarker = "https://chart.googleapis.com/chart?chst=d_map_pin_letter_withshadow&chld=" + marker.id + "|0000FF|000000";
         }
         // Create an onclick event to open the large infowindow at each marker.
         marker.addListener('click', function() {
@@ -269,10 +269,10 @@ var AppViewModel = function() {
     
     ///////change color of markers, when hover on result list item
     self.yellowMarker = function(id){
-        markers[id].setIcon("http://chart.googleapis.com/chart?chst=d_map_pin_letter_withshadow&chld=" + markers[id].id + "|FFFF00|000000");
+        markers[id].setIcon("https://chart.googleapis.com/chart?chst=d_map_pin_letter_withshadow&chld=" + markers[id].id + "|FFFF00|000000");
     };
     self.blueMarker = function(id){
-        markers[id].setIcon("http://chart.googleapis.com/chart?chst=d_map_pin_letter_withshadow&chld=" + markers[id].id + "|0000FF|000000");
+        markers[id].setIcon("https://chart.googleapis.com/chart?chst=d_map_pin_letter_withshadow&chld=" + markers[id].id + "|0000FF|000000");
     };
     ///////End of "change color of markers, when hover on result list item"
     
