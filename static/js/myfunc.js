@@ -319,7 +319,7 @@ var AppViewModel = function() {
         ///////End of "remove markers from map, and items from events and category filter lists before new search"
         
         /////// AJAX request 
-        var ajaxUrl = "http://api.eventful.com/json/events/search?app_key=F2sJN3FLFLsf5ssJ";
+        var ajaxUrl = "https://api.eventful.com/json/events/search?app_key=F2sJN3FLFLsf5ssJ";
         ajaxUrl = ajaxUrl + "&location=" + startMarker.getPosition().lat() + "," + startMarker.getPosition().lng();
         ajaxUrl = ajaxUrl + "&date=Today";
         ajaxUrl = ajaxUrl + "&within=5";
